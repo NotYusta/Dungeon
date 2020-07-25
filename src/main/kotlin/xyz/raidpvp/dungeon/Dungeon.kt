@@ -1,10 +1,9 @@
-package dungeon
+package xyz.raidpvp.dungeon
 
 import org.bukkit.plugin.java.JavaPlugin
-import dungeon.boss.Part1
-import dungeon.RpgItems.HarvesterAxe
-import dungeon.RpgItems.HarvesterHoe
-import dungeon.events.MobDrop
+import xyz.raidpvp.dungeon.boss.Part1
+import xyz.raidpvp.dungeon.rpgitems.*
+import xyz.raidpvp.dungeon.events.*
 
 internal class Dungeon : JavaPlugin() {
     override fun onEnable() {

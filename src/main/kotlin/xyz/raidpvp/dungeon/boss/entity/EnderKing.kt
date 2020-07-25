@@ -1,4 +1,4 @@
-package dungeon.boss.entity
+package xyz.raidpvp.dungeon.boss.entity
 
 import org.bukkit.ChatColor
 import org.bukkit.Location

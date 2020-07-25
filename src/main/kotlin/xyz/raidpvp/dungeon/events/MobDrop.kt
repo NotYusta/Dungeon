@@ -1,4 +1,4 @@
-package dungeon.events
+package xyz.raidpvp.dungeon.events
 
 import org.bukkit.ChatColor
 import org.bukkit.Material

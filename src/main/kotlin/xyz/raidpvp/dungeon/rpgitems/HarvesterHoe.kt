@@ -1,4 +1,4 @@
-package dungeon.RpgItems.SmeltPickaxe
+package xyz.raidpvp.dungeon.rpgitems
 
 import org.bukkit.Material
 import org.bukkit.block.Block
@@ -8,19 +8,19 @@ import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.inventory.ItemStack
 import java.util.*
 
-class Emerald : Listener {
+class HarvesterHoe : Listener {
 
     @EventHandler
     fun onInteract(e: BlockBreakEvent) {
         val block = e.block
         val player = e.player
 
-        if (block.type != Material.EMERALD_ORE || player.itemInHand == null)
+        if (block.type != Material.SUGAR_CANE_BLOCK || player.itemInHand == null)
             return
 
-        if (player.itemInHand.type != Material.DIAMOND_PICKAXE ||
+        if (player.itemInHand.type != Material.DIAMOND_HOE ||
                 !player.itemInHand.hasItemMeta() || player.itemInHand.itemMeta.displayName == null ||
-                player.itemInHand.itemMeta.displayName != "§e§lSmelt Pickaxe"
+                player.itemInHand.itemMeta.displayName != "§b§mHarvester Hoe"
         )
             return
 
@@ -34,7 +34,7 @@ class Emerald : Listener {
             listElement.type = Material.AIR
         }
 
-        player.inventory.addItem(ItemStack(Material.EMERALD, blocks.size))
+        player.inventory.addItem(ItemStack(Material.SUGAR_CANE, blocks.size))
 
 
     }
@@ -45,7 +45,7 @@ class Emerald : Listener {
 
         blocks.add(block)
 
-        while (loc.block.type == Material.EMERALD_ORE) {
+        while (loc.block.type == Material.SUGAR_CANE_BLOCK) {
             blocks.add(loc.block)
             loc.add(0.0, 1.0, 0.0)
         }

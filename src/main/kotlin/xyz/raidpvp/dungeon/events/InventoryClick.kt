@@ -1,6 +1,7 @@
-package dungeon.events
+package xyz.raidpvp.dungeon.events
 
-import dungeon.boss.entity.EnderKing
+import com.sun.xml.internal.bind.v2.TODO
+import xyz.raidpvp.dungeon.boss.entity.EnderKing
 import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.event.Event

@@ -1,4 +1,4 @@
-package dungeon.boss
+package xyz.raidpvp.dungeon.boss
 
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor

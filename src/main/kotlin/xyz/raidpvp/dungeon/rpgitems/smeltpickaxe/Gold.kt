@@ -1,4 +1,4 @@
-package dungeon.RpgItems.SmeltPickaxe
+package xyz.raidpvp.dungeon.rpgitems.SmeltPickaxe
 
 import org.bukkit.Material
 import org.bukkit.block.Block
@@ -8,14 +8,14 @@ import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.inventory.ItemStack
 import java.util.*
 
-class Iron : Listener {
+class Gold : Listener {
 
     @EventHandler
     fun onInteract(e: BlockBreakEvent) {
         val block = e.block
         val player = e.player
 
-        if (block.type != Material.IRON_ORE || player.itemInHand == null)
+        if (block.type != Material.GOLD_ORE || player.itemInHand == null)
             return
 
         if (player.itemInHand.type != Material.DIAMOND_PICKAXE ||
@@ -34,7 +34,7 @@ class Iron : Listener {
             listElement.type = Material.AIR
         }
 
-        player.inventory.addItem(ItemStack(Material.IRON_INGOT, blocks.size))
+        player.inventory.addItem(ItemStack(Material.GOLD_INGOT, blocks.size))
 
 
     }
@@ -45,7 +45,7 @@ class Iron : Listener {
 
         blocks.add(block)
 
-        while (loc.block.type == Material.IRON_ORE) {
+        while (loc.block.type == Material.GOLD_ORE) {
             blocks.add(loc.block)
             loc.add(0.0, 1.0, 0.0)
         }

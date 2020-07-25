@@ -1,4 +1,4 @@
-package dungeon.RpgItems
+package xyz.raidpvp.dungeon.rpgitems
 
 import org.bukkit.Material
 import org.bukkit.block.Block
