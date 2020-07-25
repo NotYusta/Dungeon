@@ -4,13 +4,15 @@ import org.bukkit.plugin.java.JavaPlugin
 import xyz.raidpvp.dungeon.boss.Part1
 import xyz.raidpvp.dungeon.rpgitems.*
 import xyz.raidpvp.dungeon.events.*
+import xyz.raidpvp.dungeon.rpgitems.smeltpickaxe.SmeltPickaxe
 
-internal class Dungeon : JavaPlugin() {
+class Dungeon : JavaPlugin() {
     override fun onEnable() {
         server.pluginManager.registerEvents(Part1(), this)
         server.pluginManager.registerEvents(MobDrop(), this)
         server.pluginManager.registerEvents(HarvesterHoe(), this)
         server.pluginManager.registerEvents(HarvesterAxe(), this)
+        server.pluginManager.registerEvents(SmeltPickaxe(), this)
         logger.info("[RaidPvP] Dungeon has been enabled!")
         logger.info("""  _____ ____        ____
  |  _ \ __ _(_) __| |  _ \__   |  _ \

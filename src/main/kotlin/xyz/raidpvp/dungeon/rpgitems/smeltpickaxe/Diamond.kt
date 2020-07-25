@@ -1,4 +1,4 @@
-package xyz.raidpvp.dungeon.items.SmeltPickaxe
+package xyz.raidpvp.dungeon.rpgitems.SmeltPickaxe
 
 import org.bukkit.Material
 import org.bukkit.block.Block
