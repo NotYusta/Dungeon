@@ -1,6 +1,6 @@
 name: Dungeon
 version: 1.0
-main: xyz.raidpvp.dungeon
+main: xyz.raidpvp.dungeon.Dungeon
 softdepend: [SkyBlockPerm]
 authors: [RedEpic, KJosh, JollyPerson]
 description: Copyright 2020 RaidPvP Server, A Dungeon Plugin for RaidPvP

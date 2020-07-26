@@ -1,9 +1,10 @@
 package xyz.raidpvp.dungeon
 
 import org.bukkit.plugin.java.JavaPlugin
+import xyz.raidpvp.dungeon.boss.enderking.Ability
+import xyz.raidpvp.dungeon.boss.enderking.Effect
 import xyz.raidpvp.dungeon.rpgitems.*
 import xyz.raidpvp.dungeon.rpgitems.smeltpickaxe.*
-import xyz.raidpvp.dungeon.boss.enderking.*
 import xyz.raidpvp.dungeon.events.*
 
 class Dungeon : JavaPlugin() {
