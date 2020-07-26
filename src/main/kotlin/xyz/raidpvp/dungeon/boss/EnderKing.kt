@@ -1,6 +1,6 @@
 package xyz.raidpvp.dungeon.boss
 
-import org.bukkit.Material
+import org.bukkit.*
 import org.bukkit.entity.Enderman
 import org.bukkit.entity.EntityType
 import org.bukkit.event.EventHandler
@@ -25,6 +25,10 @@ class EnderKing(private val plugin: Dungeon) : Listener {
             enderman.addPotionEffect(PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Int.MAX_VALUE, 10, true, false))
             enderman.addPotionEffect(PotionEffect(PotionEffectType.INCREASE_DAMAGE, Int.MAX_VALUE, 5, true, false))
             enderman.setMetadata("Ender King", FixedMetadataValue(plugin, "enderking"))
+            p.player.world.playSound(p.player.world, Sound.ENTITY_ENDERMEN_SCREAM, 1, 0)
+            Bukkit.broadcastMessage("§e§l" + p.displayName + "§a§nHas summoned the" + "§7Ender" + "§dKing")
         }
     }
+    private fun World.playSound(world: World?, entityEndermenScream: Sound, i: Int, i1: Int) {}
 }
+
