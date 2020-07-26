@@ -8,7 +8,7 @@ import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.inventory.ItemStack
 import java.util.*
 
-class Coal : Listener {
+class CoalSP : Listener {
 
     @EventHandler
     fun onInteract(e: BlockBreakEvent) {

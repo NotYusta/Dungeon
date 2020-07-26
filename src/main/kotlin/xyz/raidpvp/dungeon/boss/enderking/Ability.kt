@@ -1,4 +1,4 @@
-package xyz.raidpvp.dungeon.boss
+package xyz.raidpvp.dungeon.boss.enderking
 
 import org.bukkit.Material
 import org.bukkit.Sound
@@ -12,14 +12,13 @@ import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
 import java.util.*
 
-class Part2 : Listener {
+class Ability : Listener {
     @EventHandler
     fun onDamage(e: EntityDamageByEntityEvent) {
         if (e.entity is Enderman && e.damager is Player) {
             if (e.entity.hasMetadata("Ender King")) {
                 val player = e.damager as Player
-                e.entity.
-
+                val endermans = e.entity as Enderman
                 // Ability #1: Block Attack
                 val rand = Random()
                 val random = rand.nextInt(100)
@@ -27,6 +26,7 @@ class Part2 : Listener {
                     e.isCancelled = true
                     player.playSound(player.location, Sound.valueOf("ANVIL_LAND"), 10f, 10f)
                     player.sendMessage("§c§lYour attack was blocked!")
+                    endermans.addPotionEffect(PotionEffect(PotionEffectType.REGENERATION, Int.MAX_VALUE, 4, true, false))
                 }
 
                 // Ability #2: SpawnMinion(s)
@@ -40,7 +40,6 @@ class Part2 : Listener {
                     leggings.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4)
                     val boots = ItemStack(Material.DIAMOND_BOOTS)
                     boots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4)
-                    e.isCancelled = true
 
                     val minion = e.damager.world.spawnEntity(e.damager.location.add(0.5, 0.0, 0.5), EntityType.ZOMBIE) as Zombie
                     minion.isBaby
@@ -51,6 +50,7 @@ class Part2 : Listener {
                     minion.equipment.helmet = helmet
                     minion.equipment.chestplate = chestplate
                     minion.equipment.leggings = leggings
+                    minion.health = 200.0
                 }
 
                 // Ability #3: SpawnWarrior(s)
@@ -68,7 +68,6 @@ class Part2 : Listener {
                     val sword = ItemStack(Material.DIAMOND_SWORD)
                     sword.addEnchantment(Enchantment.DAMAGE_ALL, 5)
                     sword.addEnchantment(Enchantment.FIRE_ASPECT, 2)
-                    e.isCancelled = true
 
                     val warrior = e.damager.world.spawnEntity(e.damager.location.add(0.5, 0.0, 0.5), EntityType.PIG_ZOMBIE) as PigZombie
                     warrior.customName = "§7Ender §dKing's Warrior"
@@ -80,6 +79,7 @@ class Part2 : Listener {
                     warrior.equipment.leggings = leggings
                     warrior.equipment.boots = boots
                     warrior.equipment.itemInMainHand = sword
+                    warrior.health = 450.0
                     warrior.addPotionEffect(PotionEffect(PotionEffectType.SPEED, Int.MAX_VALUE , 2, true, false))
                     warrior.addPotionEffect(PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Int.MAX_VALUE , 2, true, false))
                 }
@@ -88,15 +88,17 @@ class Part2 : Listener {
 
                 val random4 = rand.nextInt( 100)
                 if (random4 < 2.5) {
-                    e.isCancelled = true
 
                     val guard = e.damager.world.spawnEntity(e.damager.location.add(0.5, 0.0, 0.5), EntityType.IRON_GOLEM) as IronGolem
                     guard.customName = "§7Ender §dKing's Guard"
                     guard.isCustomNameVisible = true
                     guard.target = player
-                    guard.
+                    guard.health = 1000.0
+                    guard.addPotionEffect(PotionEffect(PotionEffectType.INCREASE_DAMAGE, Int.MAX_VALUE , 2, true, false))
+                    guard.addPotionEffect(PotionEffect(PotionEffectType.SPEED, Int.MAX_VALUE , 2, true, false))
                 }
             }
         }
     }
 }
+

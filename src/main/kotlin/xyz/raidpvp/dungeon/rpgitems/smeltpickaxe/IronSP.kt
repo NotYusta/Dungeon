@@ -8,14 +8,14 @@ import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.inventory.ItemStack
 import java.util.*
 
-class Diamond : Listener {
+class IronSP : Listener {
 
     @EventHandler
     fun onInteract(e: BlockBreakEvent) {
         val block = e.block
         val player = e.player
 
-        if (block.type != Material.DIAMOND_ORE || player.itemInHand == null)
+        if (block.type != Material.IRON_ORE || player.itemInHand == null)
             return
 
         if (player.itemInHand.type != Material.DIAMOND_PICKAXE ||
@@ -34,7 +34,7 @@ class Diamond : Listener {
             listElement.type = Material.AIR
         }
 
-        player.inventory.addItem(ItemStack(Material.DIAMOND, blocks.size))
+        player.inventory.addItem(ItemStack(Material.IRON_INGOT, blocks.size))
 
 
     }
@@ -45,7 +45,7 @@ class Diamond : Listener {
 
         blocks.add(block)
 
-        while (loc.block.type == Material.DIAMOND_ORE) {
+        while (loc.block.type == Material.IRON_ORE) {
             blocks.add(loc.block)
             loc.add(0.0, 1.0, 0.0)
         }
