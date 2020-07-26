@@ -4,7 +4,7 @@ import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 import xyz.raidpvp.dungeon.rpgitems.SmeltPickaxe.*
 
-class SmeltPickaxe : JavaPlugin(), Listener {
+class SmeltPickaxeListener : JavaPlugin(), Listener {
     override fun onEnable() {
         server.pluginManager.registerEvents(Coal(), this)
         server.pluginManager.registerEvents(Iron(), this)
