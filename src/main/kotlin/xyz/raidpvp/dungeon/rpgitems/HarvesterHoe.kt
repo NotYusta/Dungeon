@@ -15,12 +15,12 @@ class HarvesterHoe : Listener {
         val block = e.block
         val player = e.player
 
-        if (block.type != Material.SUGAR_CANE_BLOCK || player.itemInHand == null)
+        if (block.type != Material.SUGAR_CANE_BLOCK || player.inventory.itemInMainHand == null)
             return
 
-        if (player.itemInHand.type != Material.DIAMOND_HOE ||
-                !player.itemInHand.hasItemMeta() || player.itemInHand.itemMeta.displayName == null ||
-                player.itemInHand.itemMeta.displayName != "§b§mHarvester Hoe"
+        if (player.inventory.itemInMainHand.type != Material.DIAMOND_HOE ||
+                !player.inventory.itemInMainHand.hasItemMeta() || player.inventory.itemInMainHand.itemMeta.displayName == null ||
+                player.inventory.itemInMainHand.itemMeta.displayName != "§b§mHarvester Hoe"
         )
             return
 

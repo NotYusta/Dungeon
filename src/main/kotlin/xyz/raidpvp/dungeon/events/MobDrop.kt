@@ -22,14 +22,14 @@ class MobDrop : Listener {
                 val rnd = Random()
                 val randomchance = rnd.nextInt(100)
                 if (randomchance <= 0.5) {
-                    giveCoins(p, 3)
+                    giveCoins(3)
                     p.sendMessage(ChatColor.GREEN.toString() + "You are lucky and got" + ChatColor.RED + "a" + ChatColor.RED + "Raid" + ChatColor.YELLOW + "Coin")
                 }
             }
         }
     }
 
-    private fun giveCoins(p: Player, i: Int) {
+    private fun giveCoins(i: Int) {
         val itemStack = ItemStack(Material.FIREBALL, i)
         val meta = itemStack.itemMeta
         meta.isUnbreakable = true

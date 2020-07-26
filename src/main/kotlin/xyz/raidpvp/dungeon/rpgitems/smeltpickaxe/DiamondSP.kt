@@ -1,4 +1,4 @@
-package xyz.raidpvp.dungeon.rpgitems.SmeltPickaxe
+package xyz.raidpvp.dungeon.rpgitems.smeltpickaxe
 
 import org.bukkit.Material
 import org.bukkit.block.Block
@@ -15,12 +15,12 @@ class DiamondSP : Listener {
         val block = e.block
         val player = e.player
 
-        if (block.type != Material.DIAMOND_ORE || player.itemInHand == null)
+        if (block.type != Material.DIAMOND_ORE || player.inventory.itemInMainHand == null)
             return
 
-        if (player.itemInHand.type != Material.DIAMOND_PICKAXE ||
-                !player.itemInHand.hasItemMeta() || player.itemInHand.itemMeta.displayName == null ||
-                player.itemInHand.itemMeta.displayName != "§e§lSmelt Pickaxe"
+        if (player.inventory.itemInMainHand.type != Material.DIAMOND_PICKAXE ||
+                !player.inventory.itemInMainHand.hasItemMeta() || player.inventory.itemInMainHand.itemMeta.displayName == null ||
+                player.inventory.itemInMainHand.itemMeta.displayName != "§e§lSmelt Pickaxe"
         )
             return
 

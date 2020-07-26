@@ -1,10 +1,10 @@
 package xyz.raidpvp.dungeon
 
 import org.bukkit.plugin.java.JavaPlugin
-import xyz.raidpvp.dungeon.boss.EnderKing
 import xyz.raidpvp.dungeon.rpgitems.*
-import xyz.raidpvp.dungeon.rpgitems.SmeltPickaxe.*
+import xyz.raidpvp.dungeon.rpgitems.smeltpickaxe.*
 import xyz.raidpvp.dungeon.boss.enderking.*
+import xyz.raidpvp.dungeon.events.*
 
 class Dungeon : JavaPlugin() {
     override fun onEnable() {
@@ -24,7 +24,7 @@ class Dungeon : JavaPlugin() {
         server.pluginManager.registerEvents(Effect(), this)
         // Events
             // MobDrop
-
+        server.pluginManager.registerEvents(MobDrop(), this)
         logger.info("[RaidPvP] Dungeon has been enabled!")
         logger.info("""  ____       _     _ ____        ____  
  |  _ \ __ _(_) __| |  _ \__   _|  _ \ 
