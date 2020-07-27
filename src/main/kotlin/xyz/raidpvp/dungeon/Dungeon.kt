@@ -1,8 +1,7 @@
 package xyz.raidpvp.dungeon
 
 import org.bukkit.plugin.java.JavaPlugin
-import xyz.raidpvp.dungeon.boss.enderking.Ability
-import xyz.raidpvp.dungeon.boss.enderking.Effect
+import xyz.raidpvp.dungeon.boss.enderking.*
 import xyz.raidpvp.dungeon.rpgitems.*
 import xyz.raidpvp.dungeon.rpgitems.smeltpickaxe.*
 import xyz.raidpvp.dungeon.events.*
@@ -23,6 +22,7 @@ class Dungeon : JavaPlugin() {
         // Boss
         server.pluginManager.registerEvents(Ability(), this)
         server.pluginManager.registerEvents(Effect(), this)
+        server.pluginManager.registerEvents(Drop(), this)
         // Events
             // MobDrop
         server.pluginManager.registerEvents(MobDrop(), this)

@@ -42,6 +42,7 @@ class Ability : Listener {
                     boots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4)
 
                     val minion = e.damager.world.spawnEntity(e.damager.location.add(0.5, 0.0, 0.5), EntityType.ZOMBIE) as Zombie
+                    minion.setMetadata("Minion")
                     minion.isBaby
                     minion.customName = "§7Ender §dKing's Minion"
                     minion.isCustomNameVisible = true
@@ -80,6 +81,7 @@ class Ability : Listener {
                     warrior.equipment.boots = boots
                     warrior.equipment.itemInMainHand = sword
                     warrior.health = 450.0
+                    warrior.setMetadata("Warrior")
                     warrior.addPotionEffect(PotionEffect(PotionEffectType.SPEED, Int.MAX_VALUE , 2, true, false))
                     warrior.addPotionEffect(PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Int.MAX_VALUE , 2, true, false))
                 }
@@ -94,8 +96,17 @@ class Ability : Listener {
                     guard.isCustomNameVisible = true
                     guard.target = player
                     guard.health = 1000.0
+                    guard.setMetadata("Guard")
                     guard.addPotionEffect(PotionEffect(PotionEffectType.INCREASE_DAMAGE, Int.MAX_VALUE , 2, true, false))
                     guard.addPotionEffect(PotionEffect(PotionEffectType.SPEED, Int.MAX_VALUE , 2, true, false))
+                }
+
+                val random5 = rand.nextInt(100)
+                if (random5 < 0.5) {
+                    val boss = e.entity as Enderman
+                    val player = e.damager as Player
+                    boss.addPotionEffect(PotionEffect(PotionEffectType.REGENERATION, 30, 5, true, true))
+                    player.sendMessage("§cThe §7Ender §dKing §chas been regenerated!")
                 }
             }
         }

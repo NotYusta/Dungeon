@@ -20,7 +20,7 @@ class HarvesterHoe : Listener {
 
         if (player.inventory.itemInMainHand.type != Material.DIAMOND_HOE ||
                 !player.inventory.itemInMainHand.hasItemMeta() || player.inventory.itemInMainHand.itemMeta.displayName == null ||
-                player.inventory.itemInMainHand.itemMeta.displayName != "§b§mHarvester Hoe"
+                player.inventory.itemInMainHand.itemMeta.displayName != "§b§nHarvester Hoe"
         )
             return
 
@@ -53,5 +53,4 @@ class HarvesterHoe : Listener {
         return blocks
 
     }
-
 }
