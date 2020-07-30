@@ -25,7 +25,7 @@ class EnderKing(private val plugin: Dungeon) : Listener {
             enderman.addPotionEffect(PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Int.MAX_VALUE, 10, true, false))
             enderman.addPotionEffect(PotionEffect(PotionEffectType.INCREASE_DAMAGE, Int.MAX_VALUE, 5, true, false))
             enderman.setMetadata("Ender King", FixedMetadataValue(plugin, "enderking"))
-            p.player.world.playSound(p.player.world, Sound.ENTITY_ENDERMEN_SCREAM, 1, 0)
+            p.player.world.playSound(p.player.world, Sound.BLOCK_END_PORTAL_SPAWN, 1, 0)
             Bukkit.broadcastMessage("§e§l" + p.displayName + "§a§nHas summoned the" + "§7Ender §dKing")
         }
     }
